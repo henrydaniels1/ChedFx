@@ -19,10 +19,7 @@ export default function Sidebar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      {/* <div className="flex h-14 w-14 relative">
-       
-        <img src={a13} className="absolute right-2 w-full h-full" alt="Logo" />
-      </div> */}
+     
       <div className=''><p className='text-3xl text-white customfont2'>Ched<span className='text-[#ecae10]'>Fx</span></p></div>
 
       {/* Hamburger Icon */}
@@ -41,22 +38,22 @@ export default function Sidebar() {
 
       {/* Menu Links */}
       <motion.div
-        className={`fixed inset-0 customfont2 bg-black bg-opacity-80 backdrop-blur-lg text-white flex flex-col items-center justify-center transition-transform duration-500 ease-in-out ${
-          isOpen ? 'translate-x-0 text-white' : 'translate-x-full '
+        className={`fixed inset-0 customfont2 fxheader bg-black bg-opacity-80 backdrop-blur-lg text-white flex flex-col items-center justify-center transition-transform duration-500 ease-in-out ${
+          isOpen ? 'translate-x-0 text-white ' : 'translate-x-full '
         } md:static md:bg-transparent md:translate-x-0 md:flex md:flex-row md:items-center md:justify-end `}
         style={{ backdropFilter: 'blur(10px)' }} // This adds the backdrop blur effect
       >
-        <div className="w-full  md:w-auto flex flex-col  z-30 md:flex-row items-center md:items-center md:space-x-4">
+        <div className="w-full  md:w-auto flex flex-col z-30 md:flex-row items-center md:items-center md:space-x-4">
           <a
-            href="#AboutFx"
-            className="hvr-underline-from-center text-lg  mb-8 md:mb-0 hover:text-gray-300 transition-transform duration-300"
+            href="#Card2"
+            className="hvr-underline-from-center text-lg   mb-8 md:mb-0 hover:text-gray-300 transition-transform duration-300"
             onClick={toggleMenu}
           >
-            About 
+            Price 
           </a>
 
           <a
-            href="#projects"
+            href="#faq"
             className="hvr-underline-from-center text-lg  mb-8 md:mb-0 hover:text-gray-300 transition-transform duration-300"
             onClick={toggleMenu}
           >
@@ -77,6 +74,7 @@ export default function Sidebar() {
           >
             Results
           </a>
+         
 
           
           {/* <Link to="/fx"> 

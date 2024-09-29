@@ -1,12 +1,25 @@
 import './App.css'
 import FxHome from './components/FxComponents/FxHome'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 
 function App() {
   
   return (
-    <>
-     <FxHome/>
-    </>
+   <Router>
+     
+       
+        <Routes>
+          
+           <Route path="/" element={<FxHome />} />
+        
+         
+          
+        </Routes>
+   
+   
+    
+    </Router>
   )
 }
 

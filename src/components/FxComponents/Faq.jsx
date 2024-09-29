@@ -45,7 +45,7 @@ const Item = ( { title, children } ) =>
 
 export const Faq = () => {
   return (
-    <div className="w-[97%] lg:w-[95%] mx-auto py-16 lg:py-20">
+    <div className="w-[97%] lg:w-[95%] mx-auto py-16 lg:py-20" id="faq">
       <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
         <div className="flex flex-col mb-16 sm:text-center">
        

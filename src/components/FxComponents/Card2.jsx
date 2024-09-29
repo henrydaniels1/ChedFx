@@ -138,7 +138,7 @@ const Pricing = () => {
   }, []);
 
   return (
-    <div className="w-[97%] lg:w-[95%] mx-auto space-y-16 ">
+    <div className="w-[97%] lg:w-[95%] mx-auto space-y-16 " id='Card2'>
       <div className="reveal2">
         <p className="md:text-4xl lg:text-5xl text-2xl font-bold text-teal-900 text-center">Pricing Plans</p>
       </div>
