@@ -1,0 +1,186 @@
+/* .card{
+    mix-blend-mode: difference;
+    color: black;
+   
+} */
+
+
+
+:root {
+    --background: #2C2C2C;
+    --primary: #FF9950;
+    --default: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+html {
+    font-family: 'Mulish';
+    font-size: 16px;
+}
+
+.background {
+   
+    display: grid;
+  
+}
+
+.button {
+    color: var(--default);
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 2.5rem;
+    max-width: 160px; 
+    /* width: 100%;  */
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    transition: all 1s ease-in;
+   
+}
+
+.button:hover {
+    color: var(--primary);
+}
+
+.button svg {
+    height: 40px;
+   
+    left: 0;
+    top: 0; 
+    position: absolute;
+    width: 100%; 
+}
+
+.button rect {      
+    fill: none;
+    stroke: var(--default);
+    stroke-width: 2;
+    stroke-dasharray: 450, 0;
+    transition: all 0.5s linear;
+}
+
+.button:hover rect {
+    stroke-width: 5;
+    
+    stroke-dasharray: 20, 300;
+    stroke-dashoffset: 48;
+    stroke: var(--primary);
+    transition: all 2s cubic-bezier(
+        0.22, 1, 0.25, 1
+    );
+}
+
+
+ /*height: 100vh; #024885, Full screen height */
+
+.animated-gradient-background {
+  width: 100%;
+ 
+  background: linear-gradient(300deg, #2c0341, #19233e, #111727);
+  background-size: 400% 400%;
+  animation: gradientAnimation 20s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+.animated-gradient-background {
+  background: linear-gradient(45deg, #4e54c8, #8f94fb);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+} */
+
+
+.content {
+  text-align: center;
+}
+
+.title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.fxheader{
+    height:100dvh;
+}
+
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../fonts/milkman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.CustomFont {
+    font-family: 'CustomFont', sans-serif;
+}
+
+.customfont2{
+   font-family: 'Bespoke Stencil', sans-serif;}
+
+/* 
+@font-face {
+    font-family: 'HONEY', Display;
+    src: url('../fonts/HoneyDemo-Light.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.CustomFont2 {
+    font-family: 'HONEY', Display;
+} */
+
+
+.parallax {
+  /* The image used */
+  background-image: url('your-image-url.jpg'); /* Replace with your image URL */
+  
+  /* Set a specific height */
+  height: 100vh; /* Full height */
+  
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 
+.cont1:hover > :not(:hover){
+opacity: 0.5;
+} */
+
+/* Apply hover effect to sibling children, not parent */
+.cont1:hover > * {
+  opacity: 0.5;
+}
+
+.cont1 > *:hover {
+  opacity: 1;
+}

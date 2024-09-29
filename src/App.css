@@ -1,0 +1,33 @@
+/* App.css or your main CSS file */
+html {
+  scroll-behavior: smooth;
+}
+
+/* App.css or your main CSS file */
+.spline-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Place behind other content */
+}
+
+main {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.stylish-regular {
+  font-family: 'Stylish', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('./fonts/milkman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
