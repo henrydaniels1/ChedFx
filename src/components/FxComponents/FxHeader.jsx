@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import '../../style/Fxstyle.css';
-import Cha from '../../assets/Cha.jpg'
+import Cha from '../../assets/cha.jpg'
 import Cha2 from '../../assets/chartvid.mp4'
 
     
@@ -79,15 +79,13 @@ const FxHeader = () => {
                 className=" text-xl text-center text-gray-400  md:text-left dark:text-gray-400 md:text-lg lg:text-xl"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-              >
-            
+                transition={{ delay: 0.3, duration: 0.8 }}>
                 Discover forex trading through our expert guidance.
                 Begin your journey to financial freedom today, and take advantage of our trading bot to automate your trading strategies.
               </motion.p>
-        <div>
-          <button className="btn-6 z-2 px-4 mx-auto md:mx-0 py-2 rounded-2xl text-xl">Get Started</button>
-        </div>
+             <div>
+                <button className="btn-6 z-2 px-4 mx-auto md:mx-0 py-2 rounded-2xl text-xl">Get Started</button>
+             </div>
         
             </motion.div>
           
@@ -100,16 +98,7 @@ const FxHeader = () => {
               variants={imageVariants}
             >
               <div className="w-full h-[18rem] lg:w-[35rem] object-cover md:h-[25rem] lg:h-[28rem]">
-               <motion.video className="h-full w-full object-cover object-center rounded-lg shadow-lg"
-  src={Cha2}
-  alt="Trading Video"
-  muted      // Video will be muted by default
-  loop       // Video will loop infinitely
-  autoPlay   // Video will start playing automatically
-  playsInline // Allows inline play on mobile devices
-/>
-
-              </div>
+               <motion.video className="h-full w-full object-cover object-center rounded-lg shadow-lg" src={Cha2} alt="Trading Video" muted loop autoPlay playsInline/></div>
             </motion.div>
           </div>
         </div>
