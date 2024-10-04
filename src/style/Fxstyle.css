@@ -1,11 +1,3 @@
-/* .card{
-    mix-blend-mode: difference;
-    color: black;
-   
-} */
-
-
-
 :root {
     --background: #2C2C2C;
     --primary: #FF9950;
@@ -35,7 +27,6 @@ html {
     font-size: 1rem;
     line-height: 2.5rem;
     max-width: 160px; 
-    /* width: 100%;  */
     letter-spacing: 0.3rem;
     font-weight: 600;
     position: relative;
@@ -43,8 +34,7 @@ html {
     text-transform: uppercase;
     display: flex;
     justify-content: center;
-    transition: all 1s ease-in;
-   
+    transition: all 1s ease-in; 
 }
 
 .button:hover {
@@ -53,7 +43,6 @@ html {
 
 .button svg {
     height: 40px;
-   
     left: 0;
     top: 0; 
     position: absolute;
@@ -70,7 +59,6 @@ html {
 
 .button:hover rect {
     stroke-width: 5;
-    
     stroke-dasharray: 20, 300;
     stroke-dashoffset: 48;
     stroke: var(--primary);
@@ -79,27 +67,15 @@ html {
     );
 }
 
-
- /*height: 100vh; #024885, Full screen height */
-
 .animated-gradient-background {
   width: 100%;
- 
   background: linear-gradient(300deg, #2c0341, #19233e, #111727);
-  background-size: 400% 400%;
+  /* background-size: 400% 400%; */
   animation: gradientAnimation 20s ease infinite;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-/* 
-.animated-gradient-background {
-  background: linear-gradient(45deg, #4e54c8, #8f94fb);
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
-} */
-
 
 .content {
   text-align: center;
@@ -123,11 +99,9 @@ html {
   }
 }
 
-
 .fxheader{
     height:100dvh;
 }
-
 
 @font-face {
     font-family: 'CustomFont';
@@ -143,28 +117,11 @@ html {
 .customfont2{
    font-family: 'Bespoke Stencil', sans-serif;}
 
-/* 
-@font-face {
-    font-family: 'HONEY', Display;
-    src: url('../fonts/HoneyDemo-Light.otf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-.CustomFont2 {
-    font-family: 'HONEY', Display;
-} */
-
 
 .parallax {
   /* The image used */
-  background-image: url('your-image-url.jpg'); /* Replace with your image URL */
-  
-  /* Set a specific height */
-  height: 100vh; /* Full height */
-  
-  /* Create the parallax scrolling effect */
+  background-image: url('your-image-url.jpg');
+  height: 100vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -177,10 +134,59 @@ opacity: 0.5;
 } */
 
 /* Apply hover effect to sibling children, not parent */
+
 .cont1:hover > * {
   opacity: 0.5;
 }
 
 .cont1 > *:hover {
   opacity: 1;
+}
+
+
+/* btn-6 */
+
+.btn-6 {
+  border: none;
+  background-color: #8f44fd;
+  font-family: inherit;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-6:hover {
+  animation: jello-horizontal 0.9s both;
+}
+
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
 }

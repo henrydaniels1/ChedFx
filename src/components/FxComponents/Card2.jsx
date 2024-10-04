@@ -138,17 +138,18 @@ const Pricing = () => {
   }, []);
 
   return (
-    <div className="w-[97%] lg:w-[95%] mx-auto space-y-16 " id='Card2'>
+    <div className="w-[90%] lg:w-[95%] mx-auto space-y-16 " id='Card2'>
       <div className="reveal2">
-        <p className="md:text-4xl lg:text-5xl text-2xl font-bold text-teal-900 text-center">Pricing Plans</p>
+        <p className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center">Pricing Plans</p>
       </div>
 
       <div ref={sectionRef} className="w-full mx-0 ">
         <div
           id="pricing"
-          className={`grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 lg:gap-24 gap-16 md:gap-16 transition-all duration-1000 ease-out transform ${
+          className={`flex flex-col md:flex-row gap-8 justify-between transition-all duration-1000 ease-out transform ${
             isVisible ? 'opacity-100 translate-y-0 scale-100 rotate-0 blur-0' : 'opacity-0 translate-y-12 scale-90 rotate-3 blur-sm'
-          }`}
+            }` }
+          // grid lg:grid-cols-3 sm:grid-cols-1 md:gap-16 md:grid-cols-2 lg:gap-24 gap-16 
         >
           {pricingData.map((data, index) => (
             <PricingCard key={index} pricingData={data} />

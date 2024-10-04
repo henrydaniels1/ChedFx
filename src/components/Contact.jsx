@@ -66,7 +66,7 @@ export default function Contact() {
          <img src={Map} className='absolute opacity-80 object-cover'></img>
         <div className="mb-8 z-30">
         
-          <p className="reveal2 md:text-4xl text-2xl  font-bold mb-8 text-teal-900">Contact Us</p>
+          <p className="reveal2 md:text-4xl text-3xl  font-bold mb-8 text-teal-900">Contact Us</p>
           <p className="text-lg font-medium">We&apos;d love to hear from you! Reach out to us at:</p>
         </div>
         <div className="space-y-8  z-30">
