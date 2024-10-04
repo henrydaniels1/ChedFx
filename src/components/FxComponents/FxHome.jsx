@@ -31,7 +31,7 @@ export default function FxHome() {
           {/* <TickSubscriber /> */ }
           {/* <MainBot/> */}
         
-        
+     
           <Pricing/>
           <Faq />
           <Contact/>
