@@ -39,6 +39,14 @@ const FxHeader = () => {
     },
   };
 
+
+// Blinking Button
+ const headingVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: 'easeOut' } },
+  };
+
+
   return (
     <header className="relative fxheader flex items-center overflow-hidden pb-8" ref={ ref }>
     
@@ -83,9 +91,13 @@ const FxHeader = () => {
                 Discover forex trading through our expert guidance.
                 Begin your journey to financial freedom today, and take advantage of our trading tools to automate your trading strategies.
               </motion.p>
+               <motion.h1
+          className="z-50 bg-clip-text bg-gradient-to-r animate-pulse"
+          variants={headingVariants}
+        >
              <div>
                 <button className="btn-6 z-2 px-4 mx-auto md:mx-0 py-2 rounded-2xl text-xl">Get Started</button>
-             </div>
+             </div></motion.h1>
         
             </motion.div>
           

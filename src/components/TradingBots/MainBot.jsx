@@ -15,9 +15,10 @@ export default function MainBot() {
           
           {/* <ForexStrategy/> */ }
           
+       <Forex />
           <CurrencyComparisonTool />  
           <PositionSizeCalculator />  
-          <Forex />
+         
            <CurrencyCorrelationTool/> 
 
           {/* <div className='flex justify-between bg-gray-900 w-full md:flex-row flex-col space-y-16'>
