@@ -67,12 +67,12 @@ const PricingCard = ({ pricingData }) => {
   const buttonColor = plan === "Basic Training" || plan === "Pro Mentorship" ? "bg-[#10B981] text-white" : "bg-white text-[#10B981]"; // Green for Basic and Pro, gray for others  // Green for Premium, gray for others
 
   return (
-    <Card className={`w-full md:w-[20rem] rounded-xl transition-transform duration-300 hover:scale-105 hover:shadow-lg p-8 ${bgColor}`} variant="gradient">
+    <Card className={`w-full md:w-[20rem] rounded-xl shadow-2xl transition-transform duration-300 hover:scale-105 hover:shadow-lg p-8 ${bgColor}`} variant="gradient">
       <CardHeader
         floated={false}
         shadow={false}
         color="transparent"
-        className="m-0 mb-4 rounded-none border-b border-white/10 pb-8 text-center"
+        className="m-0 mb-4 rounded-none border-b border-white/10 shadow-2xl pb-8 text-center"
       >
         <Typography variant="small" color="white" className="font-normal uppercase">
           {plan}
@@ -146,7 +146,7 @@ const Pricing = () => {
       <div ref={sectionRef} className="w-full mx-0 ">
         <div
           id="pricing"
-          className={`flex flex-col md:flex-row gap-8 justify-between transition-all duration-1000 ease-out transform ${
+          className={`flex flex-col  md:flex-row gap-8 justify-between transition-all duration-1000 ease-out transform ${
             isVisible ? 'opacity-100 translate-y-0 scale-100 rotate-0 blur-0' : 'opacity-0 translate-y-12 scale-90 rotate-3 blur-sm'
             }` }
           // grid lg:grid-cols-3 sm:grid-cols-1 md:gap-16 md:grid-cols-2 lg:gap-24 gap-16 

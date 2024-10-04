@@ -11,7 +11,7 @@ import '../../style/Fxstyle.css'
 
 export default function MainBot() {
   return (
-      <div className="space-y-16 px-6 stylish-regular overflow-hidden py-8 bg-red-400 mx-auto lg:w-[95%] w-[97%] ">
+      <div className="space-y-16 px-6 stylish-regular overflow-hidden py-8 mx-auto lg:w-[95%] w-[97%] ">
           
           {/* <ForexStrategy/> */ }
           

@@ -44,7 +44,7 @@ const Item = ({ title, children }) => {
 
 export const Faq = () => {
   return (
-    <div className="w-[97%] lg:w-[95%] mx-auto  shadow-2xl " id="faq">
+    <div className="w-[97%] lg:w-[95%] mx-auto  shadow-2xl" id="faq">
       <div className="max-w-xl sm:mx-auto lg:max-w-2xl py-16">
         <div className="flex flex-col mb-8 sm:text-center">
           <div className="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">
