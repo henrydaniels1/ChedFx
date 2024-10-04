@@ -101,7 +101,11 @@
 import { useState } from 'react';
 
 const CurrencyCorrelationTool = () => {
-  const [currencies] = useState(['EUR/USD', 'USD/JPY', 'GBP/USD']); // Predefined currency pairs
+  // Added more popular currency pairs to the list
+  const [currencies] = useState([
+    'EUR/USD', 'USD/JPY', 'GBP/USD', 'AUD/USD', 'USD/CAD', 'NZD/USD', 'USD/CHF', 
+    'EUR/GBP', 'EUR/JPY', 'GBP/JPY', 'AUD/JPY', 'EUR/AUD', 'AUD/CAD', 'CAD/JPY'
+  ]);
   const [selectedCurrencies, setSelectedCurrencies] = useState([]);
   const [correlations, setCorrelations] = useState({});
   const apiKey = '6QPUZHBLD3C1DAV7'; // Replace with your API key
@@ -159,7 +163,7 @@ const CurrencyCorrelationTool = () => {
 
   return (
     <div className=" flex justify-center items-center ">
-      <div className="w-full  rounded-2xl bg-gray-900 text-white p-6">
+      <div className="w-full rounded-2xl bg-gray-900 text-white p-6">
         <h2 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-4">Currency Correlation Tool</h2>
 
         <div className="mb-4">
@@ -168,7 +172,7 @@ const CurrencyCorrelationTool = () => {
             multiple
             value={selectedCurrencies}
             onChange={handleSelectCurrency}
-            className="w-full mt-1 p-2 border rounded-lg text-black"
+            className="w-full mt-1 p-2 border rounded-lg text-black space-y-2"
           >
             {currencies.map((currency) => (
               <option key={currency} value={currency}>
@@ -198,9 +202,9 @@ const CurrencyCorrelationTool = () => {
             <tbody>
               {selectedCurrencies.map((currency1) => (
                 <tr key={currency1}>
-                  <td className="border px-4 py-2">{currency1}</td>
+                  <td className="border px-4 py-2 ">{currency1}</td>
                   {selectedCurrencies.map((currency2) => (
-                    <td key={currency2} className="border px-4 py-2">
+                    <td key={currency2} className="border px-4 py-2 ">
                       {correlations[currency1] && correlations[currency1][currency2]
                         ? correlations[currency1][currency2].toFixed(2)
                         : '—'}
@@ -210,7 +214,10 @@ const CurrencyCorrelationTool = () => {
               ))}
             </tbody>
           </table>
-        )}
+        ) }
+         <footer className="mt-6 text-sm">
+          <p>Disclaimer: Trading forex carries significant risks and may result in losses. Use this calculator at your own risk.</p>
+        </footer>
       </div>
     </div>
   );

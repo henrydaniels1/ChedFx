@@ -229,6 +229,10 @@ const CurrencyComparisonTool = () => {
         >
           {timer > 0 ? `Wait ${timer}s` : 'Refresh Data'}
         </button>
+        
+         <footer className="mt-6 text-sm">
+          <p>Disclaimer: Trading forex carries significant risks and may result in losses. Use this calculator at your own risk.</p>
+        </footer>
       </div>
     </div>
   );
