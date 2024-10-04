@@ -78,8 +78,9 @@ export default function Sidebar() {
           >
             Contact
           </a>
+          
          <Link to="/bot" className="hvr-underline-from-center text-lg mb-8 md:mb-0 hover:text-gray-300 transition-transform duration-300">
-           Bot
+           Tools
          </Link>
 
           

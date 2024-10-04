@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from 'react';
 import { Card, CardHeader, CardBody, CardFooter, Typography, Button } from "@material-tailwind/react";
+import { motion } from 'framer-motion';
+
 
 
 // JSON data for pricing plans
@@ -43,6 +45,11 @@ const pricingData = [
   }
 ];
 
+// Blinking Button
+ const headingVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: 'easeOut' } },
+  };
 
 // CheckIcon component
 const CheckIcon = () => (
@@ -94,15 +101,15 @@ const PricingCard = ({ pricingData }) => {
         </ul>
       </CardBody>
       <CardFooter className="mt-12 p-0">
-        <Button
-          size="lg"
-          color="white"
-          className={`hover:scale-[1.02] py-3 focus:scale-[1.02] active:scale-100 ${buttonColor}`}
-          ripple={false}
-          fullWidth={true}
+         <motion.h1
+          className="z-50 bg-clip-text bg-gradient-to-r animate-pulse"
+          variants={headingVariants}
         >
-          {buttonLabel}
-        </Button>
+           <Button size="lg" color="white"className={`hover:scale-[1.02] py-3 focus:scale-[1.02] active:scale-100 ${buttonColor}`}ripple={false} fullWidth={true}>
+          { buttonLabel }
+          </Button>
+        </motion.h1>
+       
       </CardFooter>
     </Card>
   );

@@ -81,7 +81,7 @@ const FxHeader = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}>
                 Discover forex trading through our expert guidance.
-                Begin your journey to financial freedom today, and take advantage of our trading bot to automate your trading strategies.
+                Begin your journey to financial freedom today, and take advantage of our trading tools to automate your trading strategies.
               </motion.p>
              <div>
                 <button className="btn-6 z-2 px-4 mx-auto md:mx-0 py-2 rounded-2xl text-xl">Get Started</button>
