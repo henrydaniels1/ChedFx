@@ -193,7 +193,7 @@ export default function Contact() {
   <button
     type="submit"
     disabled={state.submitting}
-    className="w-full px-4 py-3 font-bold rounded shadow focus:outline-none focus:ring-2 focus:ring-purple-600 bg-purple-600 hover:bg-purple-700 text-white"
+    className="w-full px-4 py-3 font-bold rounded-2xl shadow focus:outline-none focus:ring-2 focus:ring-purple-600 bg-purple-600 hover:bg-purple-700 text-white"
   >
     Submit
   </button>
