@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
-// import { Link } from 'react-router-dom';
-// import a13 from '../../assets/logo1.png';
 import '../../style/Nav.css';
 import '../../style/Fxstyle.css'
 
@@ -64,13 +61,6 @@ export default function Sidebar() {
             FAQs
           </a>
 
-          {/* <a
-            href="#contact"
-            className="hvr-underline-from-center text-lg  mb-8 md:mb-0 hover:text-gray-300 transition-transform duration-300"
-            onClick={toggleMenu}
-          >
-            Blog
-          </a> */}
           <a
             href="#contact"
             className="hvr-underline-from-center text-lg  mb-8 md:mb-0 hover:text-gray-300 transition-transform duration-300"
@@ -81,15 +71,8 @@ export default function Sidebar() {
           
          <Link to="/bot" className="hvr-underline-from-center text-lg mb-8 md:mb-0 hover:text-gray-300 transition-transform duration-300">
            Tools
-         </Link>
-
+          </Link>
           
-          {/* <Link to="/fx"> 
-            <div className="hvr-underline-from-center text-lg  hover:text-gray-300 transition-transform duration-300">
-             Contact
-            </div>
-          </Link> */}
-         
         </div>
       </motion.div>
     </motion.nav>

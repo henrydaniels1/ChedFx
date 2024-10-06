@@ -3,45 +3,52 @@ import ScrollReveal from 'scrollreveal';
 
 
 // npm install scrollreveal
+// hover:-translate-y-16 transition ease-in-out duration-500
 
 const ExampleComponent = () => {
   useEffect(() => {
     // Apply ScrollReveal to the desired elements
-    ScrollReveal().reveal('.reveal', {
+    ScrollReveal().reveal('.reveal1', {
       duration: 1000,
       distance: '100px',
       easing: 'ease-in-out',
-      origin: 'right',
+      origin: 'top',
       reset: true, // This allows the animation to trigger every time the component is visible
     });
   }, [] );
   
+  useEffect(() => {
+    ScrollReveal().reveal('.reveal4', {
+      duration: 1000,
+      distance: '100px',
+      easing: 'ease-in-out',
+      origin: 'bottom',
+      reset: true, 
+    });
+  }, [] );
+  
    useEffect(() => {
-    // Apply ScrollReveal to the desired elements
     ScrollReveal().reveal('.reveal2', {
       duration: 1200,
       distance: '70px',
       easing: 'ease-in-out',
       origin: 'left',
-      reset: true, // This allows the animation to trigger every time the component is visible
+      reset: true,
     });
-  }, []);
+   }, [] );
+  
    useEffect(() => {
-    // Apply ScrollReveal to the desired elements
     ScrollReveal().reveal('.reveal3', {
       duration: 1200,
       distance: '70px',
       easing: 'ease-in-out',
       origin: 'right',
-      reset: true, // This allows the animation to trigger every time the component is visible
+      reset: true, 
     });
   }, []);
 
   return (
     <div>
-     {/* <div className="reveal">
-        <p className="lg:text-4xl text-3xl  font-bold text-teal-900 text-center">Latest Work</p>
-      </div> */}
     </div>
   );
 };

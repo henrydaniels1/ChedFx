@@ -108,7 +108,7 @@ const CurrencyCorrelationTool = () => {
   ]);
   const [selectedCurrencies, setSelectedCurrencies] = useState([]);
   const [correlations, setCorrelations] = useState({});
-  const apiKey = '6QPUZHBLD3C1DAV7'; // Replace with your API key
+  const apiKey = 'D9XAGU2FFGIT1O0S'; // Replace with your API key
 
   const handleSelectCurrency = (event) => {
     const selectedCurrency = event.target.value;
@@ -162,7 +162,7 @@ const CurrencyCorrelationTool = () => {
   };
 
   return (
-    <div className=" flex justify-center items-center ">
+    <div className=" flex justify-center items-center reveal4 ">
       <div className="w-full rounded-2xl bg-gray-900 text-white p-6">
         <h2 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-4">Currency Correlation Tool</h2>
 

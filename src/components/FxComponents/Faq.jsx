@@ -48,7 +48,7 @@ export const Faq = () => {
       <div className="max-w-xl sm:mx-auto lg:max-w-2xl py-16">
         <div className="flex flex-col mb-8 sm:text-center">
           <div className="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">
-            <h2 className="max-w-lg mb-3 md:text-4xl lg:text-5xl text-3xl  text-center font-bold reveal2 leading-none tracking-tight text-gray-900 md:mx-auto">
+            <h2 className="max-w-lg mb-3 md:text-4xl lg:text-5xl text-3xl  text-center font-bold reveal1 leading-none tracking-tight text-gray-900 md:mx-auto">
              
                
                 <span className="relative">FAQ</span>

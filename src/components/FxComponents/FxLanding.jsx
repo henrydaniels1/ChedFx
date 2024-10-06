@@ -8,7 +8,7 @@ export default function FxLanding() {
         <FxNav/>
         </div>
     
-          <FxHeader />
+        <FxHeader />
       
     </div>
   )

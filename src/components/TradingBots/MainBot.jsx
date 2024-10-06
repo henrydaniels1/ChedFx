@@ -1,42 +1,28 @@
-import CurrencyComparisonTool from './TradeProb'
-import PositionSizeCalculator from './PositionLot'
 import Forex from './CurrencyConverter'
-import CurrencyCorrelationTool from './CurrencyCol'
 import '../../App.css'
 import '../../style/Fxstyle.css'
-// import ForexStrategy from "./Crown"
-
+import ExampleComponent from '../../example/Scroll'
+import PipConverter from './PipConv'
+import ForexTradingChecklist2 from './Todo2'
+// import PositionSizeCalculator from './PositionLot'
+// import ForexTradingChecklist from './Todo'
+// import CurrencyCorrelationTool from './CurrencyCol'
+// import CurrencyComparisonTool from './TradeProb'
 
 
 
 export default function MainBot() {
   return (
-      <div className="space-y-16 px-2 stylish-regular overflow-hidden py-8 mx-auto lg:w-[50%] w-[97%] ">
-          
-          {/* <ForexStrategy/> */ }
-          
-       <Forex />
-          <CurrencyComparisonTool />  
-          <PositionSizeCalculator />  
-         
-           <CurrencyCorrelationTool/> 
-
-          {/* <div className='flex justify-between bg-gray-900 w-full md:flex-row flex-col space-y-16'>
-              <div className="md:w-1/2 w-full">
-                 <CurrencyComparisonTool  />  
-              </div>
-              <div className="md:w-1/2 w-full">
-                 <PositionSizeCalculator   />  
-             </div>
-         
-          </div>
-          <div className='flex justify-between w-full bg-gray-900 md:flex-row flex-col space-y-16'>
-              <div className="md:w-1/2 w-full">  <Forex /></div>
-              <div className="md:w-1/2 w-full"> <CurrencyCorrelationTool/>  </div>
-          </div>
-         */}
-         
-      
+    <div className="stylish-regular  ">
+      <ExampleComponent />
+      <div className="space-y-16 px-2 overflow-hidden py-8 mx-auto lg:w-[50%] w-[97%]">
+        <ForexTradingChecklist2/>
+        <PipConverter/>
+        <Forex />
+        {/* <CurrencyComparisonTool />   */}
+        {/* <PositionSizeCalculator />   */}
+        {/* <CurrencyCorrelationTool /> */}
+      </div>
     </div>
   )
 }

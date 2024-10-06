@@ -106,8 +106,7 @@
 
 
 
-
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const CurrencyComparisonTool = () => {
   const [currencyData, setCurrencyData] = useState({});
@@ -116,7 +115,7 @@ const CurrencyComparisonTool = () => {
   const [timer, setTimer] = useState(0); // Timer state to handle the 1-minute delay
   const [error, setError] = useState(null); // Error state to capture API issues
 
-  const apiKey = 'QBBWMIQOLSJBCN5U'; // Replace with your API key
+  const apiKey = 'D9XAGU2FFGIT1O0S'; // Replace with your API key
   const currencyPairs = ['EUR/USD', 'EUR/GBP', 'GBP/USD'];
 
   // Function to fetch currency data from API
@@ -131,15 +130,18 @@ const CurrencyComparisonTool = () => {
           const response = await fetch(
             `https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=${baseCurrency}&to_currency=${quoteCurrency}&apikey=${apiKey}`
           );
-          const data = await response.json();
+
+          // Log the response for debugging
+          const responseData = await response.json();
+          console.log("Raw API response for pair:", pair, responseData); // Log the raw response
 
           // Check if the data contains the expected structure
-          if (data && data['Realtime Currency Exchange Rate']) {
-            const price = parseFloat(data['Realtime Currency Exchange Rate']['5. Exchange Rate']);
+          if (response.ok && responseData && responseData['Realtime Currency Exchange Rate']) {
+            const price = parseFloat(responseData['Realtime Currency Exchange Rate']['5. Exchange Rate']);
             return { pair, price };
           } else {
             // If data doesn't have the expected structure, throw an error
-            throw new Error(`Invalid response for ${pair}`);
+            throw new Error(`Invalid response for ${pair}: ${JSON.stringify(responseData)}`);
           }
         })
       );
@@ -155,7 +157,7 @@ const CurrencyComparisonTool = () => {
       startTimer(); // Start the timer after data is fetched
     } catch (error) {
       console.error('Error fetching currency data:', error);
-      setError('Failed to fetch currency data. Please try again later.');
+      setError(error.message || 'Failed to fetch currency data. Please try again later.');
       setLoading(false);
     }
   };
@@ -196,7 +198,7 @@ const CurrencyComparisonTool = () => {
   }, [timer]);
 
   return (
-    <div className="w-full flex justify-center items-center">
+    <div className="w-full flex justify-center reveal3 items-center">
       <div className="w-full rounded-2xl bg-gray-900 text-white p-6 shadow-lg">
         <h2 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-4">Currency Comparison Tool</h2>
 
@@ -215,7 +217,6 @@ const CurrencyComparisonTool = () => {
 
             <div className="mb-4 space-y-6">
               <h3 className="font-bold text-lg">Trading Signal: <span className="text-md">{suggestion}</span> </h3>
-            
             </div>
           </div>
         )}
@@ -223,13 +224,10 @@ const CurrencyComparisonTool = () => {
         <button
           onClick={fetchCurrencyData}
           disabled={timer > 0} // Disable button if timer is running
-          className={`w-full py-2 mt-4 text-white rounded-lg transition duration-300 ${
-            timer > 0 ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'
-          }`}
+          className={`w-full py-2 mt-4 text-white rounded-lg transition duration-300 ${timer > 0 ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'}`}
         >
           {timer > 0 ? `Wait ${timer}s` : 'Refresh Data'}
         </button>
-        
          <footer className="mt-6 text-sm">
           <p>Disclaimer: Trading forex carries significant risks and may result in losses. Use this calculator at your own risk.</p>
         </footer>

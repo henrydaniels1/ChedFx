@@ -59,7 +59,7 @@ const FxHeader = () => {
         animate={isInView ? 'visible' : 'hidden'} // Animation triggered by isInView
       >
        
-        <div className="flex md:justify-between md:flex-row flex-col md:items-center ">
+        <div className="flex md:justify-between md:flex-row flex-col md:items-center">
           {/* Text Section with animation */ }
           
           <motion.div className="w-full md:w-1/2 text-center md:text-left pt-20 md:pt-0 z-30" variants={textVariants}>

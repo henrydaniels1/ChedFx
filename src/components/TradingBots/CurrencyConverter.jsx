@@ -26,7 +26,7 @@ const Forex = () => {
   };
 
   return (
-    <div className=" flex justify-center items-center bg-gray-900 p-6 rounded-2xl">
+    <div className=" flex justify-center reveal1 items-center bg-gray-900 p-6 rounded-2xl">
       <div className="w-full rounded-2xl  shadow-xl">
         {/* bg-white/30 backdrop-blur-md */}
         <h2 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-4 ">Forex Converter</h2>

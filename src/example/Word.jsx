@@ -20,13 +20,6 @@ const WordCloudChart = () => {
       layout: root.verticalLayout
     }));
 
-    // Add chart title
-    // container.children.push(am5.Label.new(root, {
-    //   text: "Most popular languages on StackOverflow",
-    //   fontSize: 20,
-    //   x: am5.percent(50),
-    //   centerX: am5.percent(50)
-    // }));
 
     // Add series
     const series = container.children.push(am5wc.WordCloud.new(root, {

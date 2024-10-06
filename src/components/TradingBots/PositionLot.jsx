@@ -33,7 +33,7 @@ const PositionSizeCalculator = () => {
 
   return (
     <div className=" mx-auto">
-      <div className="rounded-2xl shadow-lg p-6 bg-gray-900 text-white">
+      <div className="rounded-2xl shadow-lg p-6 reveal2 bg-gray-900 text-white">
         <div className="mb-6">
           <h2 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-6">Position Size Calculator</h2>
           <p>Calculate the correct position size for your trades based on risk tolerance and stop-loss distance.</p>
