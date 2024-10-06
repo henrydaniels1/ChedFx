@@ -4,13 +4,13 @@ import '../../style/Fxstyle.css'
 import ExampleComponent from '../../example/Scroll'
 import PipConverter from './PipConv'
 import ForexTradingChecklist2 from './Todo2'
-// import PositionSizeCalculator from './PositionLot'
+import PositionSizeCalculator from './PositionLot'
 // import ForexTradingChecklist from './Todo'
 // import CurrencyCorrelationTool from './CurrencyCol'
 // import CurrencyComparisonTool from './TradeProb'
 
 
-
+// g3pc1zQlrr77GiH
 export default function MainBot() {
   return (
     <div className="stylish-regular  ">
@@ -20,7 +20,7 @@ export default function MainBot() {
         <PipConverter/>
         <Forex />
         {/* <CurrencyComparisonTool />   */}
-        {/* <PositionSizeCalculator />   */}
+        <PositionSizeCalculator />  
         {/* <CurrencyCorrelationTool /> */}
       </div>
     </div>
