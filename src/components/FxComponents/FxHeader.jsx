@@ -124,7 +124,7 @@ const FxHeader = () => {
       {/* Animated Gradient Background */}
       <div className="animated-gradient-background absolute top-0 right-0 bottom-0 left-0 z-[-1] overflow-hidden">
          <motion.img
-          className="w-full css-selector h-full object-cover opacity-5"
+          className="w-full css-selector h-full object-cover opacity-15"
           // src="https://images.stockcake.com/public/e/6/b/e6b9e7f1-c203-4ab0-afb1-b19c2c0b36bf/global-financial-integration-stockcake.jpg"
           src={Cha}
           alt="Background"

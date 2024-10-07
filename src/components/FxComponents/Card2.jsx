@@ -70,7 +70,7 @@ const PricingCard = ({ pricingData }) => {
   const buttonColor = plan === "Basic Training" || plan === "Pro Mentorship" ? "bg-[#10B981] text-white" : "bg-white text-[#10B981]"; // Green for Basic and Pro, gray for others  // Green for Premium, gray for others
 
   return (
-    <Card className={`w-full md:w-[20rem] rounded-xl shadow-2xl transition-transform duration-300 hover:scale-105 hover:shadow-lg p-8 ${bgColor}`} variant="gradient">
+    <Card className={`w-full md:w-[20rem] rounded-xl shadow-2xl  transition-transform ease-in duration-300 hover:scale-105 hover:shadow-lg p-8 ${bgColor}`} variant="gradient">
       <CardHeader
         floated={false}
         shadow={false}

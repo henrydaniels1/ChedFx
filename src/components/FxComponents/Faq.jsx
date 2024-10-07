@@ -89,7 +89,7 @@ export const Faq = () => {
             </Item>
           </div>
           <div className="hover:bg-teal-50 rounded reveal2">
-            <Item title="What is a Trading Bots?">
+            <Item title="What is a Trading Bot?">
               Trading bots are automated software programs that execute trades on behalf
               of users in financial markets. They use algorithms to analyze market data,
               identify trading opportunities, and execute buy or sell orders based on predefined criteria.
