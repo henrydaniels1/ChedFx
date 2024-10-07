@@ -1,8 +1,10 @@
 import  { useEffect, useState } from "react";
 import phoneConfig from "../JSON/PhoneNum.json"; // Adjust the path based on your project structure
 
+
 const WhatsAppButton = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
+  const defaultMessage = "Hello! I would like to learn more about your services."; // Set your default message here
 
   useEffect(() => {
     // Load the phone number from config.json
@@ -11,7 +13,7 @@ const WhatsAppButton = () => {
 
   const handleWhatsAppClick = () => {
     if (phoneNumber) {
-      const url = `https://wa.me/${phoneNumber}`;
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
       window.open(url, "_blank");
     }
   };
