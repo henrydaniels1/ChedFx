@@ -13,9 +13,8 @@ const pricingData = [
     price: 29,
     features: [
       "Access to introductory forex courses",
-      "3 video tutorials per week",
+      "3 Hours tutorial per week",
       "Community forum access",
-      "1 month of email support"
     ],
     buttonLabel: "Enroll Now",
   },
@@ -24,9 +23,7 @@ const pricingData = [
     price: 49,
     features: [
       "Access to advanced forex strategies",
-      "5 video tutorials per week",
-      "Live Q&A sessions",
-      "2 months of email support",
+      "5 Hours tutorial per week",
       "Personalized trading plan"
     ],
     buttonLabel: "Get Advanced Access",
@@ -36,8 +33,7 @@ const pricingData = [
     price: 99,
     features: [
       "One-on-one mentorship sessions",
-      "Custom trading strategies",
-      "Unlimited video tutorials",
+      "10 Hours tutorial per week",
       "Lifetime access to course materials",
       "24/7 support via chat"
     ],

@@ -1,12 +1,14 @@
 import { useState } from "react"
 
 const tradingCriteria = [
-  "Trend alignment",
+  "3 Point Trendline alignment",
+  "Upward/Downward Trend",
   "Support/Resistance levels",
-  "Key price action patterns",
-  "Favorable risk-reward ratio",
+    "BreakOut",
+  "Checked for Reversal???",
+"Any Shape???",
+  "2% Risk??",
   "Appropriate position size"
-//   "2% Risk"
 ]
 
 export default function ForexTradingChecklist2() {
@@ -24,7 +26,7 @@ export default function ForexTradingChecklist2() {
   const shouldTakeTrade = percentageChecked >= 60
 
   return (
-    <div className="w-full  mx-auto rounded-2xl bg-gray-900 p-6">
+    <div className="w-full reveal4 mx-auto rounded-2xl bg-gray-900 p-6">
       <header>
         <h2 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-4 ">Forex Trading Criteria Checklist</h2>
       </header>

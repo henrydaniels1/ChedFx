@@ -6,17 +6,16 @@ import { Footer } from '../Footer.jsx'
 import Contact from '../Contact.jsx'
 import Pricing from "./Card2.jsx"
 import ExampleComponent from '../../example/Scroll'
-// import SpeechToText from '../../example/Speech2.jsx'
+
 
 export default function FxHome() {
     return (
       <div className="stylish-regular overflow-hidden space-y-16">
+       
         <div className=" space-y-16">
          
           <FxLanding />
           <ExampleComponent />
-          {/* <SpeechToText/> */}
-       
           <Pricing/>
           <Faq />
           <Contact/>

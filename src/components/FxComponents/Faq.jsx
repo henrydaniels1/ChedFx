@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 import '../../style/Fxstyle.css';
+// import net from '../../assets/faq1.svg'
+
 
 
 const Item = ({ title, children }) => {
@@ -47,7 +49,11 @@ export const Faq = () => {
     <div className="w-[97%] lg:w-[95%] mx-auto  shadow-2xl" id="faq">
       <div className="max-w-xl sm:mx-auto lg:max-w-2xl py-16">
         <div className="flex flex-col mb-8 sm:text-center">
-          <div className="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl">
+          <div className="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl relative">
+
+            <div className="reveal3 absolute w-20 h-20 top-[-1rem] left-[2rem]">
+              <img src="https://static.shuffle.dev/components/preview/88e9307f-3fef-4ff5-a095-3ea7d814a416/assets/public/flex-ui-assets/elements/circle3-yellow.svg" /></div>
+
             <h2 className="max-w-lg mb-3 md:text-4xl lg:text-5xl text-3xl  text-center font-bold reveal1 leading-none tracking-tight text-gray-900 md:mx-auto">
              
                

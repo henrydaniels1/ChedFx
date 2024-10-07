@@ -27,6 +27,16 @@ const ExampleComponent = () => {
     });
   }, [] );
   
+  useEffect(() => {
+    ScrollReveal().reveal('.reveal5', {
+      duration: 1000,
+      distance: '300px',
+      easing: 'ease-in-out',
+      origin: 'top',
+      reset: true, 
+    });
+  }, [] );
+  
    useEffect(() => {
     ScrollReveal().reveal('.reveal2', {
       duration: 1200,

@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import '../../style/Fxstyle.css';
 import Cha from '../../assets/cha.jpg'
 import Cha2 from '../../assets/chartvid.mp4'
+import WhatsAppButton from './WhatsappMe'
 
     
 
@@ -47,6 +48,7 @@ const FxHeader = () => {
   };
 
 
+
   return (
     <header className="relative fxheader flex items-center overflow-hidden pb-8" ref={ ref }>
     
@@ -65,7 +67,7 @@ const FxHeader = () => {
           <motion.div className="w-full md:w-1/2 text-center md:text-left pt-20 md:pt-0 z-30" variants={textVariants}>
             <motion.div className="space-y-8  pt-8">
            
-              <motion.h1
+           <motion.h1
                 className="text-4xl  customfont2 font-semibold text-white dark:text-white lg:text-6xl"
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -80,8 +82,9 @@ const FxHeader = () => {
                 >
                   Trading
                 </motion.span>
-              </motion.h1>
-
+              </motion.h1> 
+         
+              
            
               <motion.p
                 className=" text-xl text-center text-gray-400  md:text-left dark:text-gray-400 md:text-lg lg:text-xl"
@@ -95,9 +98,10 @@ const FxHeader = () => {
           className="z-50 bg-clip-text bg-gradient-to-r animate-pulse"
           variants={headingVariants}
         >
-             <div>
+             {/* <div>
                 <button className="btn-6 z-2 px-4 mx-auto md:mx-0 py-2 rounded-2xl text-xl">Get Started</button>
-             </div></motion.h1>
+                </div> */}<WhatsAppButton/>
+              </motion.h1>
         
             </motion.div>
           

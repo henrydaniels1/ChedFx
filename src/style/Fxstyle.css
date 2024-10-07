@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+
+
 :root {
     --background: #2C2C2C;
     --primary: #FF9950;
@@ -190,3 +194,39 @@ opacity: 0.5;
     transform: scale3d(1, 1, 1);
   }
 }
+
+
+
+
+div.at-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+	}
+	.at-item {
+		color: #3079ed; font-weight:bold; font-size:3em;
+		
+		animation-name: focus-in-contract;
+		animation-duration: 2.2s;
+		animation-timing-function: ease;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-fill-mode: none;
+			
+		/* shorthand
+		animation: focus-in-contract 2.2s ease 0s 1 normal none;*/
+	}
+	@keyframes focus-in-contract {
+			
+		0% {
+			letter-spacing:1em;
+			filter:blur(12px);
+			opacity:0;
+		}
+		100% {
+			filter:blur(0);
+			opacity:1;
+		}
+	}

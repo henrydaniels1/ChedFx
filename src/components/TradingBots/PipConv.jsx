@@ -2,8 +2,8 @@ import  { useState } from 'react';
 
 const PipConverter = () => {
   // Define state variables for user input
-  const [lotSize, setLotSize] = useState(0.5); // default to 0.5 lot size
-  const [pointValue, setPointValue] = useState(0.01); // default to VL75 point value
+  const [lotSize, setLotSize] = useState(0.05); // default to 0.5 lot size
+  const [pointValue, setPointValue] = useState(10); // default to VL75 point value
   const [pipValue, setPipValue] = useState(0.005); // calculated pip value
 
   const contractSize = 1; // Fixed contract size at 1
@@ -15,8 +15,8 @@ const PipConverter = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-6 rounded-2xl bg-gray-900">
-      <h1 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center  mb-6">Pip to Dollar Converter</h1>
+    <div className="flex flex-col reveal2 items-center justify-center p-6 rounded-2xl bg-gray-900">
+      <h1 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center  mb-6">Simple Pip to Dollar Converter</h1>
       
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
         <div className="mb-4">
