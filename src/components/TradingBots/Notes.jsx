@@ -34,6 +34,11 @@ const NoteApp = () => {
     }
   };
 
+  const deleteNote = (index) => {
+    console.log('Deleting note at index:', index); // Debugging log
+    setNotes((prevNotes) => prevNotes.filter((_, i) => i !== index));
+  };
+
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Note Taking App</h1>
@@ -56,8 +61,14 @@ const NoteApp = () => {
         <h2 className="text-xl font-bold mb-2">Your Notes:</h2>
         <ul className="list-disc pl-5">
           {notes.map((n, index) => (
-            <li key={index} className="mb-1">
+            <li key={index} className="mb-1 flex justify-between">
               {n}
+              <button
+                className="ml-2 text-red-500 hover:text-red-700"
+                onClick={() => deleteNote(index)}
+              >
+                X
+              </button>
             </li>
           ))}
         </ul>
