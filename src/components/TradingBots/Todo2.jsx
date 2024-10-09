@@ -66,6 +66,7 @@
 
 
 import { useState, useEffect } from "react";
+import Delete from '../../icons/Delete'
 
 export default function ForexTradingChecklist2() {
   const [tradingCriteria, setTradingCriteria] = useState([]);
@@ -161,13 +162,13 @@ export default function ForexTradingChecklist2() {
   };
 
   return (
-    <div className="w-full mx-auto rounded-2xl bg-gray-900 p-6">
+    <div className="w-full mx-auto rounded-2xl bg-gray-900 p-6 space-y-16">
       <header>
         <h2 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-4">
           Forex Trading Criteria Checklist
         </h2>
       </header>
-      <div>
+      <div className="space-y-16">
         <ul className="space-y-4 text-white">
           {tradingCriteria.map((criterion) => (
             <li key={criterion} className="flex items-center space-x-2">
@@ -184,16 +185,16 @@ export default function ForexTradingChecklist2() {
                 {criterion}
               </label>
               <button
-                className="text-red-500 hover:text-red-700"
+                className="text-white hover:text-red-700"
                 onClick={() => removeCriterion(criterion)}
               >
-                Remove
+            <Delete/>
               </button>
             </li>
           ))}
         </ul>
 
-        <div className="mt-6">
+        <div className="flex justify-between items-center gap-4 ">
           <input
             type="text"
             value={newCriterion}
@@ -201,12 +202,13 @@ export default function ForexTradingChecklist2() {
             placeholder="Add new criterion"
             className="p-2 rounded-lg border w-full"
           />
+          <div className="flex items-center">
           <button
             onClick={addCriterion}
-            className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-lg"
+            className="px-4 py-2 bg-blue-500 text-white rounded-lg"
           >
-            Add Criterion
-          </button>
+            Add 
+          </button></div>
         </div>
 
         <div className="mt-6 space-y-2">

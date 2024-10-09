@@ -19,7 +19,6 @@ export default function MainBot() {
       <ExampleComponent />
       <div className="space-y-16 px-2 overflow-hidden py-8 mx-auto lg:w-[50%] w-[97%]">
         <div>
-                <h1 className="text-center text-3xl font-bold mb-8">Note Taking App</h1>
           {/* <NoteForm />
           <NoteList/> */}
           <NoteApp/>
