@@ -26,10 +26,11 @@ const Forex = () => {
   };
 
   return (
-    <div className=" flex justify-center reveal1 items-center bg-gray-900 p-6 rounded-2xl">
-      <div className="w-full rounded-2xl  shadow-xl">
+    <div className=" flex flex-col justify-center reveal1 items-center bg-gray-900 p-6 rounded-2xl">
+      <h2 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-4 ">Forex Converter</h2>
+      <div className="w-full rounded-2xl p-4  shadow-xl bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-none bg-opacity-10 border border-gray-100">
         {/* bg-white/30 backdrop-blur-md */}
-        <h2 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-4 ">Forex Converter</h2>
+        
         <div className="mb-4">
           <label htmlFor="from" className="block text-white">From:</label>
           <select

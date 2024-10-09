@@ -18,9 +18,9 @@ const PipConverter = () => {
     <div className="flex flex-col reveal2 items-center justify-center p-6 rounded-2xl bg-gray-900">
       <h1 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center  mb-6">Simple Pip to Dollar Converter</h1>
       
-      <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
+      <div className="bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-none bg-opacity-10 border border-gray-100 shadow-lg rounded-lg p-8 max-w-md w-full">
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Lot Size</label>
+          <label className="block text-white font-bold mb-2">Lot Size</label>
           <input
             type="number"
             value={lotSize}
@@ -31,7 +31,7 @@ const PipConverter = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Point Value (pip size)</label>
+          <label className="block text-white font-bold mb-2">Point Value (pip size)</label>
           <input
             type="number"
             value={pointValue}
@@ -49,7 +49,7 @@ const PipConverter = () => {
         </button>
 
         <div className="mt-6">
-          <h2 className="text-xl font-semibold text-gray-700">Pip Value in USD:</h2>
+          <h2 className="text-xl font-semibold text-white">Pip Value in USD:</h2>
           <p className="text-2xl font-bold text-green-600 mt-2">${pipValue.toFixed(4)}</p>
         </div>
       </div>

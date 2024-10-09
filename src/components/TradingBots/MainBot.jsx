@@ -15,7 +15,7 @@ import NoteApp from './Notes'
 
 export default function MainBot() {
   return (
-    <div className="stylish-regular  ">
+    <div className="stylish-regular bg-[url('./assets/Back3.svg')] bg-no-repeat bg-right bg-cover ">
       <ExampleComponent />
       <div className="space-y-16 px-2 overflow-hidden py-8 mx-auto lg:w-[50%] w-[97%]">
         <div>

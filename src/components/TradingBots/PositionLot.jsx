@@ -1,4 +1,5 @@
 import { useState } from 'react';
+// import Background from '../../assets/Back.svg'
 
 const PositionSizeCalculator = () => {
   // Define state variables for user input
@@ -30,13 +31,14 @@ const PositionSizeCalculator = () => {
   };
 
   return (
-    <div className="flex flex-col reveal3 items-center justify-center p-6 rounded-2xl bg-gray-900">
+    <div className="flex relative flex-col reveal3 items-center justify-center p-6 rounded-2xl bg-gray-900">
+      {/* <div className='absolute h-full w-full z-[-1]'><img src={Background}></img></div> */}
       <h1 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-6">Pip to Dollar Converter</h1>
 
-      <div className="bg-white shadow-lg rounded-lg p-4 w-full">
+      <div className="h-full bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-none bg-opacity-10 border border-gray-100 shadow-lg rounded-lg p-4 w-full">
         {/* Account Balance Input */}
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Account Balance</label>
+          <label className="block text-white font-bold mb-2">Account Balance</label>
           <input
             type="number"
             value={accountBalance}
@@ -48,7 +50,7 @@ const PositionSizeCalculator = () => {
 
         {/* Lot Size Input */}
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Lot Size</label>
+          <label className="block text-white font-bold mb-2">Lot Size</label>
           <input
             type="number"
             value={lotSize}
@@ -60,7 +62,7 @@ const PositionSizeCalculator = () => {
 
         {/* Point Value Input */}
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">Point Value (pip size)</label>
+          <label className="block text-white font-bold mb-2">Point Value (pip size)</label>
           <input
             type="number"
             value={pointValue}
@@ -78,7 +80,7 @@ const PositionSizeCalculator = () => {
         </button>
 
         <div className="mt-6">
-          <h2 className="text-xl font-semibold text-gray-700">Pip Value in USD:</h2>
+          <h2 className="text-xl font-semibold text-white">Pip Value in USD:</h2>
           <p className="text-2xl font-bold text-green-600 mt-2">${pipValue.toFixed(4)}</p>
         </div>
 
@@ -100,7 +102,7 @@ const PositionSizeCalculator = () => {
 
         {/* Display profit/loss */}
         <div className="mt-6">
-          <h2 className="text-xl font-semibold text-gray-700">Profit/Loss:</h2>
+          <h2 className="text-xl font-semibold text-white">Profit/Loss:</h2>
           <p className={`text-2xl font-bold mt-2 ${profitOrLoss >= 0 ? 'text-green-600' : 'text-red-600'}`}>
             ${profitOrLoss.toFixed(2)}
           </p>
@@ -108,7 +110,7 @@ const PositionSizeCalculator = () => {
 
         {/* Display updated account balance */}
         <div className="mt-6">
-          <h2 className="text-xl font-semibold text-gray-700">Updated Account Balance:</h2>
+          <h2 className="text-xl font-semibold text-white">Updated Account Balance:</h2>
           <p className="text-2xl font-bold text-blue-600 mt-2">${accountBalance ? parseFloat(accountBalance).toFixed(2) : '0.00'}</p>
         </div>
       </div>

@@ -168,7 +168,7 @@ export default function ForexTradingChecklist2() {
           Forex Trading Criteria Checklist
         </h2>
       </header>
-      <div className="space-y-16">
+      <div className="space-y-16 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-none bg-opacity-10 border border-gray-100 p-4 rounded-lg">
         <ul className="space-y-4 text-white">
           {tradingCriteria.map((criterion) => (
             <li key={criterion} className="flex items-center space-x-2">

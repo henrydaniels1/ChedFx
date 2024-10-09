@@ -24,10 +24,11 @@ const ForexPercentageCalculator = () => {
 
   return (
     <div className="flex flex-col items-center rounded-2xl justify-center bg-gray-900 p-4">
-      <h1 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-4">
+      <h1 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-6">
         Forex Balance Percentage Calculator
       </h1>
-
+<div className="bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-none bg-opacity-10 border border-gray-100 p-4 rounded-lg">
+      <div className="space-y-6 mb-6"> 
       <input
         type="number"
         placeholder="Enter Account Balance"
@@ -43,14 +44,15 @@ const ForexPercentageCalculator = () => {
         onChange={(e) => setPercentage(e.target.value)}
         className="mb-3 p-2 w-full max-w-md rounded-lg border border-gray-300"
       />
-
+        </div>
+        <div className=" flex justify-center">
       <button
         onClick={calculatePercentage}
-        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded "
       >
         Calculate
       </button>
-
+</div>
       {result !== null && (
         <div className="mt-4 text-xl text-white">
           <p>{percentage}% of ${balance} = ${result.toFixed(2)}</p> {/* Display formatted result */}
@@ -60,7 +62,8 @@ const ForexPercentageCalculator = () => {
             </p>
           )}
         </div>
-      )}
+        ) }
+        </div>
     </div>
   );
 };

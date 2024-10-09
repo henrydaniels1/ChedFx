@@ -44,7 +44,7 @@ const NoteApp = () => {
     <div className="container mx-auto p-4 bg-gray-900 rounded-2xl space-y-16">
       <h1 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-8">Daily Trading Notes</h1>
      
-      <div className="mb-4">
+      <div className="mb-4 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-none bg-opacity-10 border border-gray-100 p-4 rounded-lg">
          <h1 className="text-2xl font-bold mb-4 text-white">Add Notes</h1>
         <textarea
           className="w-full p-2 border rounded-lg"
@@ -60,9 +60,11 @@ const NoteApp = () => {
           Add Note
         </button>
       </div>
-      <div>
+
+
+      <div className='bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-none bg-opacity-10 border border-gray-100 p-4 rounded-lg'>
         <h2 className="text-xl font-bold mb-2 text-white">Your Notes:</h2>
-        <ul className="list-disc pl-5  ">
+        <ul className="list-disc pl-5 space-y-4  ">
           {notes.map((n, index) => (
             <li key={index} className="mb-1 flex justify-between text-white ">
               {n}
