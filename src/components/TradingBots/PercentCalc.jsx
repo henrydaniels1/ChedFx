@@ -23,7 +23,7 @@ const ForexPercentageCalculator = () => {
   };
 
   return (
-    <div className="flex flex-col items-center rounded-2xl justify-center bg-gray-900 p-4">
+    <div className="flex flex-col items-center rounded-2xl justify-center bg-gray-900 p-4 h-full">
       <h1 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-6">
         Forex Balance Percentage Calculator
       </h1>

@@ -162,71 +162,68 @@ export default function ForexTradingChecklist2() {
   };
 
   return (
-    <div className="w-full mx-auto rounded-2xl bg-gray-900 p-6 space-y-16">
+    <div className='md:w-[80%] w-full mx-auto rounded-2xl bg-gray-900 p-6 space-y-8'>
       <header>
-        <h2 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-4">
+        <h2 className='md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-2'>
           Forex Trading Criteria Checklist
         </h2>
       </header>
-      <div className="space-y-16 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-none bg-opacity-10 border border-gray-100 p-4 rounded-lg">
-        <ul className="space-y-4 text-white">
+      <div className='space-y-16 bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-none bg-opacity-10 border border-gray-100 p-4 rounded-lg'>
+        <ul className='space-y-4 text-white'>
           {tradingCriteria.map((criterion) => (
-            <li key={criterion} className="flex items-center space-x-2">
+            <li key={criterion} className='flex items-center space-x-2'>
               <input
-                type="checkbox"
+                type='checkbox'
                 id={criterion}
                 checked={checkedItems.includes(criterion)}
                 onChange={() => handleCheckboxChange(criterion)}
               />
               <label
                 htmlFor={criterion}
-                className="text-xl font-medium leading-none flex-1"
-              >
+                className='text-xl font-medium leading-none flex-1'>
                 {criterion}
               </label>
               <button
-                className="text-white hover:text-red-700"
-                onClick={() => removeCriterion(criterion)}
-              >
-            <Delete/>
+                className='text-white hover:text-red-700'
+                onClick={() => removeCriterion(criterion)}>
+                <Delete />
               </button>
             </li>
           ))}
         </ul>
 
-        <div className="flex justify-between items-center gap-4 ">
+        <div className='flex justify-between items-center gap-4 '>
           <input
-            type="text"
+            type='text'
             value={newCriterion}
             onChange={(e) => setNewCriterion(e.target.value)}
-            placeholder="Add new criterion"
-            className="p-2 rounded-lg border w-full"
+            placeholder='Add new criterion'
+            className='p-2 rounded-lg border w-full'
           />
-          <div className="flex items-center">
-          <button
-            onClick={addCriterion}
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg"
-          >
-            Add 
-          </button></div>
+          <div className='flex items-center'>
+            <button
+              onClick={addCriterion}
+              className='px-4 py-2 bg-blue-500 text-white rounded-lg'>
+              Add
+            </button>
+          </div>
         </div>
 
-        <div className="mt-6 space-y-2">
-          <progress value={percentageChecked} max="100" className="w-full" />
-          <p className="text-xl text-center text-white">
+        <div className='mt-6 space-y-2'>
+          <progress value={percentageChecked} max='100' className='w-full' />
+          <p className='text-xl text-center text-white'>
             Criteria met: {percentageChecked.toFixed(0)}%
           </p>
           <p
             className={`text-center font-semibold ${
-              shouldTakeTrade ? "text-green-600" : "text-red-600"
-            }`}
-          >
+              shouldTakeTrade ? 'text-green-600' : 'text-red-600'
+            }`}>
             {shouldTakeTrade
-              ? "Consider taking this trade"
-              : "Not recommended to take this trade"}
+              ? 'Consider taking this trade'
+              : 'Not recommended to take this trade'}
           </p>
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -2,6 +2,7 @@ import  { useEffect, useState } from "react";
 import phoneConfig from "../JSON/PhoneNum.json"; // Adjust the path based on your project structure
 
 
+
 const WhatsAppButton = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const defaultMessage = "Hello! I would like to learn more about your services."; // Set your default message here
@@ -10,6 +11,8 @@ const WhatsAppButton = () => {
     // Load the phone number from config.json
     setPhoneNumber(phoneConfig.phoneNumber);
   }, []);
+
+  // const phoneNumber = import.meta.env.VITE_PHONE_NUMBER;
 
   const handleWhatsAppClick = () => {
     if (phoneNumber) {

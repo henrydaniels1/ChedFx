@@ -26,56 +26,63 @@ const Forex = () => {
   };
 
   return (
-    <div className=" flex flex-col justify-center reveal1 items-center bg-gray-900 p-6 rounded-2xl">
-      <h2 className="md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-4 ">Forex Converter</h2>
-      <div className="w-full rounded-2xl p-4  shadow-xl bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-none bg-opacity-10 border border-gray-100">
+    <div className=' w-full md:w-[80%]  flex flex-col justify-center reveal1 items-center bg-gray-900 p-4 rounded-2xl'>
+      <h2 className='md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-4 '>
+        Forex Converter
+      </h2>
+      <div className='w-full rounded-2xl p-4  shadow-xl bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-none bg-opacity-10 border border-gray-100'>
         {/* bg-white/30 backdrop-blur-md */}
-        
-        <div className="mb-4">
-          <label htmlFor="from" className="block text-white">From:</label>
+
+        <div className='mb-4'>
+          <label htmlFor='from' className='block text-white'>
+            From:
+          </label>
           <select
             value={fromCurrency}
             onChange={(e) => setFromCurrency(e.target.value)}
-            className="w-full p-2 mt-1 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-          >
+            className='w-full p-2 mt-1 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400'>
             {currencies.map((currency) => (
-              <option key={currency} value={currency}>{currency}</option>
+              <option key={currency} value={currency}>
+                {currency}
+              </option>
             ))}
           </select>
         </div>
-        <div className="mb-4">
-          <label htmlFor="to" className="block text-white">To:</label>
+        <div className='mb-4'>
+          <label htmlFor='to' className='block text-white'>
+            To:
+          </label>
           <select
             value={toCurrency}
             onChange={(e) => setToCurrency(e.target.value)}
-            className="w-full p-2 mt-1 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-          >
+            className='w-full p-2 mt-1 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400'>
             {currencies.map((currency) => (
-              <option key={currency} value={currency}>{currency}</option>
+              <option key={currency} value={currency}>
+                {currency}
+              </option>
             ))}
           </select>
         </div>
-        <div className="mb-4">
-          <label htmlFor="amount" className="block text-white">Amount:</label>
+        <div className='mb-4'>
+          <label htmlFor='amount' className='block text-white'>
+            Amount:
+          </label>
           <input
-            type="number"
+            type='number'
             value={amount}
             onChange={(e) => setAmount(e.target.valueAsNumber)}
-            className="w-full p-2 mt-1 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className='w-full p-2 mt-1 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400'
           />
         </div>
         <button
           onClick={handleConvert}
-          className="w-full py-2 mt-4 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
-        >
+          className='w-full py-2 mt-4 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition duration-300'>
           Convert
         </button>
-        {result && (
-          <p className="mt-4 text-white">Result: {result}</p>
-        )}
+        {result && <p className='mt-4 text-white'>Result: {result}</p>}
       </div>
     </div>
-  );
+  )
 };
 
 export default Forex;
