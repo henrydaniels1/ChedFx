@@ -162,9 +162,9 @@ export default function ForexTradingChecklist2() {
   };
 
   return (
-    <div className='md:w-[80%] w-full mx-auto rounded-2xl bg-gray-900 p-6 space-y-8'>
+    <div className='md:w-[80%] w-full mx-auto rounded-2xl bg-gray-900 p-6 space-y-6'>
       <header>
-        <h2 className='md:text-4xl lg:text-5xl text-3xl font-bold text-teal-900 text-center mb-2'>
+        <h2 className='md:text-4xl lg:text-5xl text-2xl font-bold text-teal-900 text-center mb-2'>
           Forex Trading Criteria Checklist
         </h2>
       </header>

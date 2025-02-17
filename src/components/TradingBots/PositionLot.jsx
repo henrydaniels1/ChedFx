@@ -82,7 +82,7 @@ const PositionSizeCalculator = () => {
           Calculate Pip Value
         </button>
 
-        <div className='mt-6'>
+        <div className='mt-4'>
           <h2 className='text-xl font-semibold text-white'>
             Pip Value in USD:
           </h2>
@@ -92,7 +92,7 @@ const PositionSizeCalculator = () => {
         </div>
 
         {/* Buttons for Win or Loss Calculation */}
-        <div className='flex justify-between mt-6'>
+        <div className='flex justify-between mt-4'>
           <button
             onClick={() => calculateProfitOrLoss(true)}
             className='w-1/2 bg-green-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-600 mr-2'>
@@ -109,7 +109,7 @@ const PositionSizeCalculator = () => {
           
         </div>
         {/* Display profit/loss */}
-        <div className='mt-6'>
+        <div className='mt-4'>
           <h2 className='text-xl font-semibold text-white'>Profit/Loss:</h2>
           <p
             className={`text-2xl font-bold mt-2 ${
