@@ -72,7 +72,7 @@ export default function MainBot() {
           {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        <main className='w-full px-4 pt-20 pb-8 mx-auto overflow-auto'>
+        <main className='w-full px-4 pt-16 mx-auto overflow-auto'>
           {renderTool()}
         </main>
       </div>
