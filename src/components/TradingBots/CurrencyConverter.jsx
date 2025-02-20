@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const Forex = () => {
   const [fromCurrency, setFromCurrency] = useState('USD');
-  const [toCurrency, setToCurrency] = useState('EUR');
+  const [toCurrency, setToCurrency] = useState('NGN');
   const [amount, setAmount] = useState(1);
   const [result, setResult] = useState(null);
   const [currencies, setCurrencies] = useState([]);
