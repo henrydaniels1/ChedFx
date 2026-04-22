@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
-import '../../style/Fxstyle.css';
+import '../../style/Fxstyle.css'
 import eart from '../../assets/idea.svg'
 
 

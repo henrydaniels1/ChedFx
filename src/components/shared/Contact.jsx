@@ -1,17 +1,14 @@
-import { useEffect, useRef } from 'react';
-import gm from '../assets/gmail.png';
-import ad from '../assets/location.png';
-import { useForm, ValidationError } from '@formspree/react';
-import anime from 'animejs';
-import Phone from '../icons/phone.jsx'
-import Github from '../icons/Github.jsx';
-import Twitter from '../icons/Twitter.jsx';
-import Ig from '../icons/Instagram.jsx';
-import Linked from '../icons/Linked.jsx';
-import Map from '../assets/world.svg'
-// import ExampleComponent from '../example/Scroll'
-// import Facebook from '../icons/Facebook.jsx';
-// import Ig from '../icons/ig.jsx';
+import { useEffect, useRef } from 'react'
+import gm from '../../assets/gmail.png'
+import ad from '../../assets/location.png'
+import { useForm, ValidationError } from '@formspree/react'
+import anime from 'animejs'
+import Phone from './icons/phone'
+import Github from './icons/Github'
+import Twitter from './icons/Twitter'
+import Ig from './icons/Instagram'
+import Linked from './icons/Linked'
+import Map from '../../assets/world.svg'
 
 
 export default function Contact() {
