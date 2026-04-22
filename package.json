@@ -15,6 +15,7 @@
     "@deriv/deriv-api": "^1.0.15",
     "@formspree/react": "^2.5.1",
     "@material-tailwind/react": "^2.1.10",
+    "@supabase/supabase-js": "^2.104.0",
     "akar-icons": "^1.9.31",
     "animejs": "^3.2.2",
     "axios": "^1.7.7",

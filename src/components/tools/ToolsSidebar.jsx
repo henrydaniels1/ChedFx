@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
-import { Calculator, List, Percent, FileText, DollarSign, ChevronLeft, ChevronRight, Home } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Calculator, List, Percent, FileText, DollarSign, ChevronLeft, ChevronRight, Home, TrendingUp, LogOut, LogIn } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
 
 export const tools = [
   { name: 'Currency Converter', desc: 'Convert between currencies live', icon: Calculator, component: 'CurrencyConverter' },
@@ -8,9 +9,18 @@ export const tools = [
   { name: 'Trading Checklist', desc: 'Pre-trade criteria tracker', icon: List, component: 'TradingChecklist' },
   { name: 'Position Calculator', desc: 'Lot size & P&L calculator', icon: Percent, component: 'PositionCalculator' },
   { name: 'Notes', desc: 'Quick trading notes', icon: FileText, component: 'Notes' },
+  { name: 'Trade Log', desc: 'Track wins & losses', icon: TrendingUp, component: 'TradeLog' },
 ]
 
 export function ToolsSidebar({ onToolSelect, selectedTool, collapsed, onToggleCollapse }) {
+  const { user, signOut } = useAuth()
+  const navigate = useNavigate()
+
+  const handleSignOut = async () => {
+    await signOut()
+    navigate('/auth')
+  }
+
   return (
     <div className={`relative flex flex-col h-[100dvh] bg-[#0d1117] border-r border-gray-800 transition-all duration-300 ${collapsed ? 'w-16' : 'w-64'}`}>
 
@@ -60,7 +70,28 @@ export function ToolsSidebar({ onToolSelect, selectedTool, collapsed, onToggleCo
       </nav>
 
       {/* Footer */}
-      <div className="border-t border-gray-800 p-2">
+      <div className="border-t border-gray-800 p-2 space-y-1">
+        {user ? (
+          <>
+            {!collapsed && (
+              <p className="text-xs text-gray-600 px-2 truncate">{user.email}</p>
+            )}
+            <button
+              onClick={handleSignOut}
+              title={collapsed ? 'Sign Out' : undefined}
+              className={`w-full flex items-center gap-3 rounded-lg px-2 py-2.5 text-gray-400 hover:bg-gray-800 hover:text-red-400 transition-colors ${collapsed ? 'justify-center' : ''}`}>
+              <LogOut size={18} className="shrink-0" />
+              {!collapsed && <span className="text-sm">Sign Out</span>}
+            </button>
+          </>
+        ) : (
+          <Link to="/auth"
+            className={`flex items-center gap-3 rounded-lg px-2 py-2.5 text-gray-400 hover:bg-gray-800 hover:text-[#ecae10] transition-colors ${collapsed ? 'justify-center' : ''}`}
+            title={collapsed ? 'Sign In' : undefined}>
+            <LogIn size={18} className="shrink-0" />
+            {!collapsed && <span className="text-sm">Sign In</span>}
+          </Link>
+        )}
         <Link
           to="/"
           className={`flex items-center gap-3 rounded-lg px-2 py-2.5 text-gray-400 hover:bg-gray-800 hover:text-white transition-colors ${collapsed ? 'justify-center' : ''}`}

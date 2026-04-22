@@ -5,6 +5,7 @@ import PipConverter from '../components/tools/PipConverter'
 import TradingChecklist from '../components/tools/TradingChecklist'
 import PositionCalculator from '../components/tools/PositionCalculator'
 import Notes from '../components/tools/Notes'
+import TradeLog from '../components/tools/TradeLog'
 import { Menu, X } from 'lucide-react'
 
 const toolMap = {
@@ -13,6 +14,7 @@ const toolMap = {
   TradingChecklist,
   PositionCalculator,
   Notes,
+  TradeLog,
 }
 
 function EmptyState({ onSelect }) {
