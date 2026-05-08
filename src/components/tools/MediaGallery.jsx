@@ -121,10 +121,14 @@ export default function MediaGallery() {
   }
 
   const download = async (img) => {
+    const res = await fetch(img.url)
+    const blob = await res.blob()
+    const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
-    a.href = img.url
+    a.href = url
     a.download = img.name
     a.click()
+    URL.revokeObjectURL(url)
   }
 
   const saveNote = async (img) => {
