@@ -6,15 +6,19 @@ import TradingChecklist from '../components/tools/TradingChecklist'
 import PositionCalculator from '../components/tools/PositionCalculator'
 import Notes from '../components/tools/Notes'
 import TradeLog from '../components/tools/TradeLog'
+import TradeReminder from '../components/tools/TradeReminder'
+import MediaGallery from '../components/tools/MediaGallery'
 import { Menu, X } from 'lucide-react'
 
 const toolMap = {
   CurrencyConverter,
-  PipConverter,
+  // PipConverter,
   TradingChecklist,
   PositionCalculator,
   Notes,
   TradeLog,
+  TradeReminder,
+  MediaGallery,
 }
 
 function EmptyState({ onSelect }) {

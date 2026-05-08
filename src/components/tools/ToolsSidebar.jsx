@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types'
-import { Calculator, List, Percent, FileText, DollarSign, ChevronLeft, ChevronRight, Home, TrendingUp, LogOut, LogIn } from 'lucide-react'
+import { Calculator, List, Percent, FileText, DollarSign, ChevronLeft, ChevronRight, Home, TrendingUp, LogOut, LogIn, Image, Bell } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 
 export const tools = [
   { name: 'Currency Converter', desc: 'Convert between currencies live', icon: Calculator, component: 'CurrencyConverter' },
-  { name: 'Pip Converter', desc: 'Pip value in USD', icon: DollarSign, component: 'PipConverter' },
+  // { name: 'Pip Converter', desc: 'Pip value in USD', icon: DollarSign, component: 'PipConverter' },
   { name: 'Trading Checklist', desc: 'Pre-trade criteria tracker', icon: List, component: 'TradingChecklist' },
   { name: 'Position Calculator', desc: 'Lot size & P&L calculator', icon: Percent, component: 'PositionCalculator' },
   { name: 'Notes', desc: 'Quick trading notes', icon: FileText, component: 'Notes' },
   { name: 'Trade Log', desc: 'Track wins & losses', icon: TrendingUp, component: 'TradeLog' },
+  { name: 'Trade Reminder', desc: 'Schedule future trade alerts', icon: Bell, component: 'TradeReminder' },
+  { name: 'Media Gallery', desc: 'Upload & review FX charts', icon: Image, component: 'MediaGallery' },
 ]
 
 export function ToolsSidebar({ onToolSelect, selectedTool, collapsed, onToggleCollapse }) {

@@ -11,6 +11,8 @@ export default function Auth() {
   const [mode, setMode] = useState('login')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [fullName, setFullName] = useState('')
+  const [phone, setPhone] = useState('')
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
   const [info, setInfo] = useState(null)
@@ -21,7 +23,9 @@ export default function Auth() {
     setInfo(null)
     setLoading(true)
     const fn = mode === 'login' ? signIn : signUp
-    const { error: err, data } = await fn(email, password)
+    const { error: err, data } = mode === 'login'
+      ? await signIn(email, password)
+      : await signUp(email, password, { full_name: fullName, phone })
     setLoading(false)
     if (err) return setError(err.message)
     if (mode === 'register' && !data.session) {
@@ -44,6 +48,18 @@ export default function Auth() {
         </div>
 
         <form onSubmit={handle} className="px-6 py-5 space-y-4">
+          {mode === 'register' && (
+            <>
+              <input
+                type="text" required placeholder="Full Name"
+                value={fullName} onChange={e => setFullName(e.target.value)}
+                className={input} />
+              <input
+                type="tel" required placeholder="Phone Number"
+                value={phone} onChange={e => setPhone(e.target.value)}
+                className={input} />
+            </>
+          )}
           <input
             type="email" required placeholder="Email"
             value={email} onChange={e => setEmail(e.target.value)}

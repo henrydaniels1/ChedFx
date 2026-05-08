@@ -44,12 +44,16 @@ export default function PositionCalculator() {
                 className={inputCls} />
             </Field>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="">
               <Field label="Lot Size">
                 <input type="number" value={lotSize} min={0.01} step={0.01}
                   onChange={e => { setLotSize(parseFloat(e.target.value) || 0); setResult(null) }}
                   className={inputCls} />
               </Field>
+              
+            </div>
+
+            <div>
               <Field label="Point Value (Pips)" hint="instrument-specific">
                 <input type="number" value={pips} min={0} step={0.0001}
                   onChange={e => { setPips(parseFloat(e.target.value) || 0); setResult(null) }}
