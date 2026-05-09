@@ -10,13 +10,18 @@ const SYMBOLS = [
   'frxEURUSD', 'frxGBPUSD', 'frxUSDJPY', 'frxAUDUSD', 'frxEURGBP'
 ];
 
+let audioContext = null;
+
 const playAlertSound = () => {
-  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  
   const playTone = (freq, startTime, duration) => {
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
     osc.connect(gain);
-    gain.connect(ctx.destination);
+    gain.connect(audioContext.destination);
     osc.type = 'sine';
     osc.frequency.setValueAtTime(freq, startTime);
     gain.gain.setValueAtTime(0.3, startTime);
@@ -24,10 +29,12 @@ const playAlertSound = () => {
     osc.start(startTime);
     osc.stop(startTime + duration);
   };
-  const now = ctx.currentTime;
-  playTone(659, now, 0.15);
-  playTone(784, now + 0.2, 0.15);
-  playTone(880, now + 0.4, 0.3);
+  
+  const now = audioContext.currentTime;
+  playTone(659, now, 0.5);
+  playTone(784, now + 0.5, 0.5);
+  playTone(880, now + 1.0, 0.8);
+  playTone(1047, now + 1.1, 0.5); // Add a high C note
 };
 
 const inp = 'bg-[#161b22] border border-gray-700 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-[#ecae10] transition-colors';
@@ -64,7 +71,7 @@ export default function PriceAlert() {
 
         playAlertSound();
 
-        if (Notification.permission === 'granted') {
+        if ('Notification' in window && Notification.permission === 'granted') {
           new Notification(`Price Alert: ${alert.symbol}`, {
             body: `Price is ${alert.condition === 'above' ? '≥' : '≤'} ${alert.target} (now: ${price.toFixed(5)})`,
             icon: '/favicon.ico'
