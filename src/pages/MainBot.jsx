@@ -7,6 +7,7 @@ import PositionCalculator from '../components/tools/PositionCalculator'
 import Notes from '../components/tools/Notes'
 import TradeLog from '../components/tools/TradeLog'
 import TradeReminder from '../components/tools/TradeReminder'
+import PriceAlert from '../components/tools/PriceAlert'
 import MediaGallery from '../components/tools/MediaGallery'
 import { Menu, X } from 'lucide-react'
 
@@ -18,6 +19,7 @@ const toolMap = {
   Notes,
   TradeLog,
   TradeReminder,
+  PriceAlert,
   MediaGallery,
 }
 

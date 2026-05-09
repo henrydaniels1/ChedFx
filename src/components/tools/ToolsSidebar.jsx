@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { Calculator, List, Percent, FileText, DollarSign, ChevronLeft, ChevronRight, Home, TrendingUp, LogOut, LogIn, Image, Bell } from 'lucide-react'
+import { Calculator, List, Percent, FileText, DollarSign, ChevronLeft, ChevronRight, Home, TrendingUp, LogOut, LogIn, Image, Bell, AlertCircle } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 
@@ -11,6 +11,7 @@ export const tools = [
   { name: 'Notes', desc: 'Quick trading notes', icon: FileText, component: 'Notes' },
   { name: 'Trade Log', desc: 'Track wins & losses', icon: TrendingUp, component: 'TradeLog' },
   { name: 'Trade Reminder', desc: 'Schedule future trade alerts', icon: Bell, component: 'TradeReminder' },
+  { name: 'Price Alert', desc: 'Live Deriv price alerts', icon: AlertCircle, component: 'PriceAlert' },
   { name: 'Media Gallery', desc: 'Upload & review FX charts', icon: Image, component: 'MediaGallery' },
 ]
 
