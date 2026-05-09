@@ -110,9 +110,9 @@ const playAlertSound = () => {
   // Change the numbers after 'now +' to control timing between tones
   // Change the last number in playTone() to control how long each tone lasts
   const now = ctx.currentTime
-  playTone(523, now, 0.4)          // C5 - duration: 0.4s
-  playTone(659, now + 0.5, 0.4)    // E5 - starts 0.5s after, duration: 0.4s
-  playTone(784, now + 1.0, 0.8)    // G5 - starts 1.0s after, duration: 0.8s (held longer)
+  playTone(523, now, 2.4)          // C5 - duration: 0.4s
+  playTone(659, now + 2.5, 2.4)    // E5 - starts 0.5s after, duration: 0.4s
+  playTone(784, now + 4.0, 4.8)    // G5 - starts 1.0s after, duration: 0.8s (held longer)
   // Total ring time: ~1.8 seconds
 }
 
