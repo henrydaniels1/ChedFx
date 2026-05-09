@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Pencil, Trash2, Bell, X, Check } from 'lucide-react'
 import { supabase } from '../../config/supabase'
 import { useAuth } from '../../context/AuthContext'
@@ -93,6 +93,7 @@ export default function TradeReminder() {
   const [loading, setLoading] = useState(false)
   const [editId, setEditId] = useState(null)
   const [showForm, setShowForm] = useState(false)
+  const notifiedRef = useRef(new Set())
 
   useEffect(() => {
     if (!user) return
@@ -103,6 +104,34 @@ export default function TradeReminder() {
       .order('remind_at', { ascending: true })
       .then(({ data }) => data && setReminders(data))
   }, [user])
+
+  useEffect(() => {
+    if ('Notification' in window && Notification.permission === 'default') {
+      Notification.requestPermission()
+    }
+  }, [])
+
+  useEffect(() => {
+    const check = setInterval(() => {
+      const now = Date.now()
+      reminders.forEach(r => {
+        const time = new Date(r.remind_at).getTime()
+        if (time <= now && !notifiedRef.current.has(r.id)) {
+          notifiedRef.current.add(r.id)
+          const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIGGS57OihUBELTKXh8bllHAU2jdXvzn0vBSh+zPDajzsKElyx6OyrWBQLSKDf8sFuIwUrgc7y2Yk2CBhku+zooVARDEyl4fG5ZRwFN43V7859LwUofszw2o87ChJcsevsq1gVC0ig3/LBbiMFK4HO8tmJNggYZLvs6KFQEQxMpeHxuWUcBTeN1e/OfS8FKH7M8NqPOwsSXLHr7KtYFQtIoN/ywW4jBSuBzvLZiTYIGGS77OihUBEMTKXh8bllHAU3jdXvzn0vBSh+zPDajzsKElyx6+yrWBULSKDf8sFuIwUrgc7y2Yk2CBhku+zooVARDEyl4fG5ZRwFN43V7859LwUofszw2o87ChJcsevsq1gVC0ig3/LBbiMFK4HO8tmJNggYZLvs6KFQEQxMpeHxuWUcBTeN1e/OfS8FKH7M8NqPOwsSXLHr7KtYFQtIoN/ywW4jBSuBzvLZiTYIGGS77OihUBEMTKXh8bllHAU3jdXvzn0vBSh+zPDajzsKElyx6+yrWBULSKDf8sFuIwUrgc7y2Yk2CBhku+zooVARDEyl4fG5ZRwFN43V7859LwUofszw2o87ChJcsevsq1gVC0ig3/LBbiMFK4HO8tmJNggYZLvs6KFQEQxMpeHxuWUcBTeN1e/OfS8FKH7M8NqPOwsSXLHr7KtYFQtIoN/ywW4jBSuBzvLZiTYIGGS77OihUBEMTKXh8bllHAU3jdXvzn0vBSh+zPDajzsKElyx6+yrWBULSKDf8sFuIwUrgc7y2Yk2CBhku+zooVARDEyl4fG5ZRwFN43V7859LwUofszw2o87ChJcsevsq1gVC0ig3/LBbiMFK4HO8tmJNggYZLvs6KFQEQxMpeHxuWUcBTeN1e/OfS8FKH7M8NqPOwsSXLHr7KtYFQtIoN/ywW4jBQ==')
+          audio.play().catch(() => {})
+          if (Notification.permission === 'granted') {
+            new Notification('Trade Reminder', {
+              body: `${r.direction.toUpperCase()} ${r.pair}${r.notes ? ' - ' + r.notes : ''}`,
+              icon: '/favicon.ico',
+              tag: r.id
+            })
+          }
+        }
+      })
+    }, 1000)
+    return () => clearInterval(check)
+  }, [reminders])
 
   const add = async (form) => {
     setLoading(true)

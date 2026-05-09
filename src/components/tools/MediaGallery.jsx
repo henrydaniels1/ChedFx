@@ -181,7 +181,7 @@ export default function MediaGallery() {
         </div>
       ) : (
         <div className="flex-1 overflow-y-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2  lg:grid-cols-4 gap-3">
             {images.map(img => (
               <div key={img.id}
                 className="group relative rounded-xl overflow-hidden border border-gray-800 bg-gray-900 aspect-video cursor-pointer"
