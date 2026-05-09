@@ -87,6 +87,35 @@ function isPast(iso) {
   return iso && new Date(iso) < new Date()
 }
 
+const playAlertSound = () => {
+  const ctx = new (window.AudioContext || window.webkitAudioContext)()
+  
+  const playTone = (freq, startTime, duration) => {
+    const osc = ctx.createOscillator()
+    const gain = ctx.createGain()
+    osc.connect(gain)
+    gain.connect(ctx.destination)
+    
+    osc.type = 'sine'
+    osc.frequency.setValueAtTime(freq, startTime)
+    
+    gain.gain.setValueAtTime(0.4, startTime)
+    gain.gain.exponentialRampToValueAtTime(0.001, startTime + duration)
+    
+    osc.start(startTime)
+    osc.stop(startTime + duration)
+  }
+
+  // ⏰ ADJUST RING TIME HERE:
+  // Change the numbers after 'now +' to control timing between tones
+  // Change the last number in playTone() to control how long each tone lasts
+  const now = ctx.currentTime
+  playTone(523, now, 0.4)          // C5 - duration: 0.4s
+  playTone(659, now + 0.5, 0.4)    // E5 - starts 0.5s after, duration: 0.4s
+  playTone(784, now + 1.0, 0.8)    // G5 - starts 1.0s after, duration: 0.8s (held longer)
+  // Total ring time: ~1.8 seconds
+}
+
 export default function TradeReminder() {
   const { user } = useAuth()
   const [reminders, setReminders] = useState([])
@@ -118,8 +147,7 @@ export default function TradeReminder() {
         const time = new Date(r.remind_at).getTime()
         if (time <= now && !notifiedRef.current.has(r.id)) {
           notifiedRef.current.add(r.id)
-          const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIGGS57OihUBELTKXh8bllHAU2jdXvzn0vBSh+zPDajzsKElyx6OyrWBQLSKDf8sFuIwUrgc7y2Yk2CBhku+zooVARDEyl4fG5ZRwFN43V7859LwUofszw2o87ChJcsevsq1gVC0ig3/LBbiMFK4HO8tmJNggYZLvs6KFQEQxMpeHxuWUcBTeN1e/OfS8FKH7M8NqPOwsSXLHr7KtYFQtIoN/ywW4jBSuBzvLZiTYIGGS77OihUBEMTKXh8bllHAU3jdXvzn0vBSh+zPDajzsKElyx6+yrWBULSKDf8sFuIwUrgc7y2Yk2CBhku+zooVARDEyl4fG5ZRwFN43V7859LwUofszw2o87ChJcsevsq1gVC0ig3/LBbiMFK4HO8tmJNggYZLvs6KFQEQxMpeHxuWUcBTeN1e/OfS8FKH7M8NqPOwsSXLHr7KtYFQtIoN/ywW4jBSuBzvLZiTYIGGS77OihUBEMTKXh8bllHAU3jdXvzn0vBSh+zPDajzsKElyx6+yrWBULSKDf8sFuIwUrgc7y2Yk2CBhku+zooVARDEyl4fG5ZRwFN43V7859LwUofszw2o87ChJcsevsq1gVC0ig3/LBbiMFK4HO8tmJNggYZLvs6KFQEQxMpeHxuWUcBTeN1e/OfS8FKH7M8NqPOwsSXLHr7KtYFQtIoN/ywW4jBSuBzvLZiTYIGGS77OihUBEMTKXh8bllHAU3jdXvzn0vBSh+zPDajzsKElyx6+yrWBULSKDf8sFuIwUrgc7y2Yk2CBhku+zooVARDEyl4fG5ZRwFN43V7859LwUofszw2o87ChJcsevsq1gVC0ig3/LBbiMFK4HO8tmJNggYZLvs6KFQEQxMpeHxuWUcBTeN1e/OfS8FKH7M8NqPOwsSXLHr7KtYFQtIoN/ywW4jBQ==')
-          audio.play().catch(() => {})
+          playAlertSound()
           if (Notification.permission === 'granted') {
             new Notification('Trade Reminder', {
               body: `${r.direction.toUpperCase()} ${r.pair}${r.notes ? ' - ' + r.notes : ''}`,
